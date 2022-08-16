@@ -27,13 +27,7 @@ resource "aws_security_group" "gaming" {
     self      = true
   }
   ingress {
-    description = "RDP UDP"
-    from_port   = 3389
-    to_port     = 3389
-    protocol    = "udp"
-    self        = true
-  }
-  ingress {
+    description = "Moonlight"
     from_port = 48010
     to_port   = 48010
     protocol  = "udp"
