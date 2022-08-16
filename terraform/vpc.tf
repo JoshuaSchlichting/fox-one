@@ -25,6 +25,7 @@ resource "aws_security_group" "gaming" {
     to_port   = 3389
     protocol  = "tcp"
     self      = true
+    cidr_blocks = [ "0.0.0.0/0" ]
   }
   ingress {
     description = "Moonlight"
