@@ -3,7 +3,7 @@ resource "tls_private_key" "pk" {
   rsa_bits  = 4096
 }
 
-resource "aws_key_pair" "kp" {
+resource "aws_key_pair" "gaming" {
   key_name   = "gaming"
   public_key = tls_private_key.pk.public_key_openssh
 
