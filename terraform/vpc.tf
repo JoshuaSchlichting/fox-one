@@ -1,5 +1,5 @@
 resource "aws_vpc" "gaming" {
-  cidr_block           = "10.0.0.0/16"
+  cidr_block           = "10.0.0.0/28"
   enable_dns_hostnames = true
   enable_classiclink_dns_support = true
   tags = {
@@ -9,7 +9,7 @@ resource "aws_vpc" "gaming" {
 
 resource "aws_subnet" "gaming" {
   vpc_id            = aws_vpc.gaming.id
-  cidr_block        = "10.0.1.0/24"
+  cidr_block        = "10.0.1.0/28"
   availability_zone = "us-east-1a"
 
   tags = {
