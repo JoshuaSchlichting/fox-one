@@ -1,21 +1,3 @@
-resource "aws_vpc" "gaming" {
-  cidr_block           = "10.0.0.0/28"
-  enable_dns_hostnames = true
-  enable_classiclink_dns_support = true
-  tags = {
-    Name = "gaming"
-  }
-}
-
-resource "aws_subnet" "gaming" {
-  vpc_id            = aws_vpc.gaming.id
-  cidr_block        = "10.0.1.0/28"
-  availability_zone = "us-east-1a"
-
-  tags = {
-    Name = "gaming"
-  }
-}
 
 resource "aws_security_group" "gaming" {
   name        = "gaming-sg"
@@ -65,5 +47,4 @@ resource "aws_security_group" "gaming" {
     cidr_blocks      = ["0.0.0.0/0"]
     ipv6_cidr_blocks = ["::/0"]
   }
-  vpc_id = aws_vpc.gaming.id
 }
