@@ -6,26 +6,17 @@ resource "aws_instance" "gaming" {
   instance_type               = "t3.2xlarge"
   associate_public_ip_address = true
   ebs_optimized               = true
+  key_name = aws_key_pair.gaming.key_name
   root_block_device {
     volume_size = "512"
     volume_type = "io1"
     iops        = "100"
   }
-  vpc_security_group_ids = [aws_security_group.gaming.id]
-
-  subnet_id = aws_subnet.gaming.id
+  security_groups = [aws_security_group.gaming.name]
 
   tags = {
     Name = "gaming"
   }
-}
-
-resource "aws_volume_attachment" "storage" {
-  device_name = "/dev/nvme0n1"
-
-  volume_id   = aws_ebs_volume.storage.id
-  instance_id = aws_instance.gaming.id
-
 }
 
 output "ip_address" {
