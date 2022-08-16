@@ -17,30 +17,35 @@ resource "aws_security_group" "gaming" {
     self      = true
   }
   ingress {
+    description = "Moonlight"
     from_port = 48010
     to_port   = 48010
     protocol  = "tcp"
     self      = true
   }
   ingress {
+    description = "Moonlight"
     from_port = 47989
     to_port   = 47989
     protocol  = "tcp"
     self      = true
   }
   ingress {
+    description = "Moonlight"
     from_port = 47984
     to_port   = 47984
     protocol  = "tcp"
     self      = true
   }
   ingress {
+    description = "Moonlight"
     from_port = 47998
     to_port   = 48000
     protocol  = "udp"
     self      = true
   }
   egress {
+    description = "Egress all"
     from_port        = 0
     to_port          = 0
     protocol         = "-1"
