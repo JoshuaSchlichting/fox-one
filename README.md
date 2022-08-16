@@ -8,3 +8,6 @@ Deploy a gaming rig in the cloud using terraform.
 cd terraform
 terraform apply
 ```
+
+## Contribute
+Pull requests are encouraged :)
