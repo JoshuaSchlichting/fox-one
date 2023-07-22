@@ -11,9 +11,16 @@ resource "aws_security_group" "gaming" {
   }
   ingress {
     description = "Moonlight"
+    from_port = 5353
+    to_port   = 5353
+    protocol  = "udp"
+    self      = true
+  }
+  ingress {
+    description = "Moonlight"
     from_port = 48010
     to_port   = 48010
-    protocol  = "udp"
+    protocol  = "tcp"
     self      = true
   }
   ingress {
@@ -41,6 +48,21 @@ resource "aws_security_group" "gaming" {
     description = "Moonlight"
     from_port = 47998
     to_port   = 48000
+    protocol  = "udp"
+    self      = true
+  }
+ingress {
+    description = "Moonlight"
+    from_port = 48002
+    to_port   = 48002
+    protocol  = "udp"
+    self      = true
+  }
+  
+  ingress {
+    description = "Moonlight"
+    from_port = 48010
+    to_port   = 48010
     protocol  = "udp"
     self      = true
   }
